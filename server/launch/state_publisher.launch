@@ -1,0 +1,13 @@
+<launch>
+	<group ns="cb1">
+		<param name="robot_description" textfile="$(find armv31)/urdf/armv31.urdf" />
+		
+		<node name="state_publisher" pkg="server" type="state_publisher" />
+
+	        <!-- Convert joint states to /tf tranforms -->
+	       <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
+	</group>
+
+   
+
+</launch>
